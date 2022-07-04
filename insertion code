@@ -1,0 +1,56 @@
+<?php 
+if(isset($_REQUEST["sign_in"])){
+  $con=mysqli_connect("localhost","root","","mini");
+  $question=$_REQUEST["question"];
+  $answer_a=$_REQUEST["answer_a"];
+  $answer_b=$_REQUEST["answer_b"];
+  $answer_c=$_REQUEST["answer_c"];
+  $answer_d=$_REQUEST["answer_d"];
+  $ins="insert into questions(question,ans_a,ans_b,ans_c,ans_d)values('$question','$answer_a','$answer_b','$answer_c','$answer_d')";
+  $insert=mysqli_query($con,$ins);
+  if($insert){
+    echo "inserted";
+  }}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" href="js/bootstrap.min.js"></script>
+	<script type="text/javascript" href="mdb.min.js"></script>
+</head>
+<body>
+<!-- Material form login -->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-6" style="margin-left:280px;margin-top:50px;">
+<div class="card" style="">
+   <form class="text-center" style="color: #757575;" method="post" action="question2.php">   <div class="md-form">
+        <input type="text"  class="form-control" required placeholder="question" name="question">
+      </div>
+      <div class="md-form">
+        <input type="text"  class="form-control" required placeholder="answer_a" name="answer_a">
+      </div>
+<div class="md-form">
+        <input type="text"  class="form-control" required placeholder="answer_b" name="answer_b">
+      </div><div class="md-form">
+        <input type="text"  class="form-control" required placeholder="answer_C" name="answer_c">
+      </div><div class="md-form">
+        <input type="text"  class="form-control" required placeholder="answer_d" name="answer_d">
+      </div>
+   <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" name="sign_in">Insert</button>
+    </form>
+   
+
+  </div>
+</div>
+</body>
+
+</html>
+                                            
+                                                              
